@@ -16,7 +16,8 @@ Class ReceiptTest extends TestCase {
 
     public function testTotal() {
         $items = [1,2,3,4,5];
-        $totalItems = $this->Receipt->getTotalItems($items);
+        $coupon = 0.20;
+        $totalItems = $this->Receipt->getTotalItems($items, $coupon);
         $this->assertEquals(
             15,
             $totalItems,
